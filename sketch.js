@@ -1,6 +1,7 @@
 let board
 let p1
 let p2
+let ball
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -10,12 +11,15 @@ function setup() {
 	let py = floor(windowHeight / 2) - floor(ph / 2)
 	p1 = new Paddle(0, py, pw, ph, 'red')
 	p2 = new Paddle(windowWidth - pw, py, pw, ph, 'blue')
+	ball = new Ball(floor(windowWidth / 2), floor(windowHeight / 2), 25, 'green')
 }
 
 function draw() {
 	board.draw()
 	p1.draw()
 	p2.draw()
+	ball.draw()
+	ball.move()
 }
 
 function keyPressed () {
